@@ -10,10 +10,13 @@ class Artist
   def initialize(name)
     @name = name
     @@all << self
+    @songs = []
   end
 
   def new_song(name, genre)
     song = Song.new(name, self, genre)
+    @song << song
+    song.artist = self
   end
 
   def songs
