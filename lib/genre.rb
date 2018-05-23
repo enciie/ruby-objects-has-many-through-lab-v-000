@@ -11,14 +11,12 @@ class Genre
     @@all << self
   end
 
-  def new_song(song_name, artist)
-    song_name = Song.new()
-  end
-
   def songs
+    Song.all {|song| song.genre == self}
   end
 
   def artists
+    songs.collect {|song| song.artist}
   end
-  
+
 end
