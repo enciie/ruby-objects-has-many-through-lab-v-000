@@ -12,9 +12,10 @@ class Doctor
   end
 
   def appointments
+    Appointment.all {|appt| appt.doctor == self}
   end
 
   def patients
   end
-  
+
 end
